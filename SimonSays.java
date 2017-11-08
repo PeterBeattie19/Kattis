@@ -9,8 +9,11 @@ public class SimonSays {
     for(int i = 1; i<=numTest+1; i++){
       String s = scan.nextLine();
 
-      if(s.matches("Simon says.*")){
+      if(s.matches("simon says.*") && s.length()>11){
         System.out.println(s.substring(11,s.length()));
+      }
+      else {
+        System.out.println();
       }
     }
   }
