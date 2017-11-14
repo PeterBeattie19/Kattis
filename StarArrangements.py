@@ -7,6 +7,7 @@ def check (i, j, n):
       s1 += i
     else:
       s1 += j
+    if s1 > n: return False
     k += 1 
 
   #print(s1)
