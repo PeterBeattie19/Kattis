@@ -1,38 +1,28 @@
-import java.io.*;
+import java.util.*;
 
 public class Statistics {
-  public static void main(String[] args) throws IOException{
-    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-    String line = br.readLine();
+  public static void main(String[] args){
+    Scanner scan = new Scanner(System.in);
+    //String line = scan.nextLine();
     int count = 1;
 
-    while(count<=10 && (line.matches("")==false)){
-      String strarr[] = line.split(" ");
 
-      int arr[] = convertToInteger(strarr);
+    while(scan.hasNext()){
 
+      int l = Integer.MIN_VALUE;
+      int s = Integer.MAX_VALUE;
+      int size = scan.nextInt();
 
-      System.out.print("Case " +count+ ": ");
-      int largest = arr[1];
-      int smallest = arr[1];
-      for(int i = 2; i<arr.length; i++){
-        int val = arr[i];
-        if(smallest > val) smallest = val;
-        if(largest < val) largest = val;
+      for(int i = 0; i<size; i++){
+        int val = scan.nextInt();
+        if(val < s) s = val;
+        if(val > l) l = val;
       }
-
-      System.out.println(smallest +" "+ largest +" "+ (largest - smallest));
+      System.out.print("Case " +count+ ": ");
+      System.out.println(s +" "+ l +" "+ (l - s));
       count++;
-      line = br.readLine();
-    }
-  }
 
-  public static int[] convertToInteger(String arr[]){
-    int res[] = new int[arr.length];
-    for(int i = 0; i<arr.length; i++){
-      res[i] = Integer.parseInt(arr[i]);
     }
-    return res;
+    scan.close();
   }
 }
