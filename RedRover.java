@@ -19,7 +19,7 @@ public class RedRover {
 		String maxString = "";
 		int longest = 0;
 
-		for(int i = 1; i<=s.length()/2; i++){
+		for(int i = 1; i<=s.length(); i++){
 			for(int j = 0; j<=s.length()-i; j++){
 
 				String ch = s.substring(j,j+i);
@@ -29,7 +29,7 @@ public class RedRover {
 
 
 				int ans = s.length() - (i*count) + count + i;
-				if(count==1 && i==1)ans--; 
+				//if(count==1 && i==1)ans--; 
 
 				//System.out.println(count);
 
@@ -42,6 +42,8 @@ public class RedRover {
 			}
 		}
 
+		if(min > s.length()) System.out.println(s.length());
+		else
 		System.out.println(min);
 		//System.out.println(maxString);
 	}
@@ -59,14 +61,5 @@ public class RedRover {
   			}
   		}
   		return count; 
-	}
-
-	public static boolean allSame(String s){
-		char c = s.charAt(0); 
-
-		for(int i = 1; i<s.length(); i++){
-			if(s.charAt(i) != c) return false;
-		}
-		return true;
 	}
 }
