@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.Arrays;
 
-public class ABC {
+public class ABC  {
   public static void main(String[] args) {
     Scanner scan = new Scanner(System.in);
     int arr[] = new int[3];
@@ -12,7 +12,7 @@ public class ABC {
     arr[0] = Integer.parseInt(str[0]);
     arr[1] = Integer.parseInt(str[1]);
     arr[2] = Integer.parseInt(str[2]);
-
+   
 
     String order = scan.nextLine();
 
