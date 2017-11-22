@@ -7,7 +7,7 @@ public  class BackSpace {
 
 		String line = scan.nextLine();
 
-		//Stack<Character> st = new Stack<Character>(); 
+		//Stack<Character> st = new Stack<Character>(); Stackss Too slow
 		StringBuilder st = new StringBuilder(); 
 		int j = 0; 
 
