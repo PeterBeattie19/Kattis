@@ -1,65 +1,49 @@
+import java.io.*;
 import java.util.*;
-import java.lang.*;
 
 public class RedRover {
-	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in); 
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); 
 
-		String s = scan.nextLine(); 
-
-
-		/*if(allSame(s)){
-			System.out.println((int)Math.sqrt(s.length()) * 2); 
-			return;
-		}*/
+        String s = br.readLine(); 
 
 
-		HashSet<String> checked = new HashSet<String>(); 
-		int min = Integer.MAX_VALUE; 
-		String maxString = "";
-		int longest = 0;
+        HashSet<String> checked = new HashSet<String>(); 
+        int min = Integer.MAX_VALUE; 
 
-		for(int i = 1; i<=s.length(); i++){
-			for(int j = 0; j<=s.length()-i; j++){
+        for(int i = 1; i<=s.length()/3; i++){
+            for(int j = 0; j<=s.length()-i; j++){
 
-				String ch = s.substring(j,j+i);
+                String ch = s.substring(j,j+i);
 
-				if(checked.add(ch) == false) continue;
-				int count = findCount(s,ch);
+                if(checked.add(ch) == false) continue;
+                int count = findCount(s,ch);
 
+                int ans = s.length() - (i*count) + count + i;
 
-				int ans = s.length() - (i*count) + count + i;
-				//if(count==1 && i==1)ans--; 
+                if(ans < min){
+                 min = ans;  
+                }
+            }
+        }
 
-				//System.out.println(count);
+        if(min > s.length()) System.out.println(s.length());
+        else
+        System.out.println(min);
+    }
 
-				if(ans < min){
-				 min = ans;  
-				 //System.out.println(min +" "+ ch +" "+ count);
+    public static int findCount(String s1, String s2){
 
-				 maxString = ch;
-				}
-			}
-		}
+        int l1 = s1.length();
+        int l2 = s2.length(); 
+        int count = 0;
 
-		if(min > s.length()) System.out.println(s.length());
-		else
-		System.out.println(min);
-		//System.out.println(maxString);
-	}
-
-  	public static int findCount(String s1, String s2){
-
-  		int l1 = s1.length();
-  		int l2 = s2.length(); 
-  		int count = 0;
-
-  		for(int i = 0; i<=(l1-l2); i++){
-  			if(s2.matches(s1.substring(i,i+l2))){
-  			 count++;
-  			 i += (l2-1);
-  			}
-  		}
-  		return count; 
-	}
+        for(int i = 0; i<=(l1-l2); i++){
+            if(s2.matches(s1.substring(i,i+l2))){
+             count++;
+             i += (l2-1);
+            }
+        }
+        return count; 
+    }
 }
