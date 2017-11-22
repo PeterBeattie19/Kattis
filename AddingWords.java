@@ -6,10 +6,12 @@ public class AddingWords {
 		Map<String,Integer> map = new HashMap<String,Integer>();
 		Map<Integer,String> mapInt = new HashMap<Integer,String>();
 
-		String line[] = scan.nextLine().split(" ");
+		
 
-		while(line[0].matches("clear") == false){
-			if(line.length == 3){
+		while(scan.hasNextLine()){
+			String line[] = scan.nextLine().split(" ");
+
+			if(line[0].matches("def")){
 
 				if(map.containsKey(line[1])){
 					int temp = map.get(line[1]);
@@ -19,9 +21,14 @@ public class AddingWords {
 				mapInt.put(Integer.parseInt(line[2]), line[1]); 
 			}
 
-			else{
+			else if(line[0].matches("calc") == true){
 				boolean check = false;
-				int result = map.get(line[1]); 
+				Integer result = map.get(line[1]); 
+
+				if(result == null) {
+					printUnknown(line); 
+					continue;
+				}
 				for(int i = 3; i<line.length-1; i+=2){
 
 					Integer  val = map.get(line[i]); 
@@ -46,7 +53,12 @@ public class AddingWords {
 					print(line, s); 
 			}
 
-			line = scan.nextLine().split(" ");
+			else {
+				map.clear();
+				mapInt.clear(); 
+			}
+
+			//line = scan.nextLine().split(" ");
 		}
 	}
 
