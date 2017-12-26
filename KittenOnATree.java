@@ -1,6 +1,7 @@
 import java.util.*; 
 import java.io.*; 
-
+/* Use HasMap for faster result
+*/
 public class KittenOnATree {
 	public static void main (String args[]) throws IOException{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); 
