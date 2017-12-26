@@ -5,6 +5,7 @@ import java.io.*;
 public class KittenOnATree {
 	public static void main (String args[]) throws IOException{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); 
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
 		String start = br.readLine(); 
 		String line[] = br.readLine().split(" "); 
@@ -19,11 +20,14 @@ public class KittenOnATree {
 		//Searching for start 
 
 		do {
-			System.out.print(start +" "); 
+			//System.out.print(start +" "); 
+			bw.write(start +" ");
 			start = findParent(start, graph); 
 		}
 
 		while(start.matches("-1") == false); 
+		
+		bw.flush(); 
 	}
 
 	public static String findParent(String start, ArrayList<String[]> graph ){
