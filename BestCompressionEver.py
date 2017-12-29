@@ -1,4 +1,4 @@
-#See Limitations of compression
+#See Limitations of lossless compression
 
 n,b = map(int, input().split())
 
