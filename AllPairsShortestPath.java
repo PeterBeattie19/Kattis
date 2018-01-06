@@ -30,7 +30,7 @@ public class AllPairsShortestPath {
 				int w = Integer.parseInt(line[2]);
 
 				
-				dist[u][v] = (double)Math.min(w, dist[u][v]); //if an edge exits the entry will != 0 and the value will the weight of the edge, easier than using Edge class 
+				dist[u][v] = (double)Math.min(w, dist[u][v]); //Multiple inputs for the same edge, pick best one 
 			}
 
 			floydWarshall(dist);
