@@ -19,12 +19,29 @@ public class PhoneList {
         arr.add(s);  
       }
 
+      ArrayList<Integer> count = new ArrayList<>(); 
+
       for(String s: arr)
-        System.out.println(trie.findCount(s,0)); 
+        count.add(trie.findCount(s,0)); 
+
+      boolean found = false; 
+      for(int i: count)
+        if(i > 1){
+          found = true;
+          break;
+        }
+
+
+        if(found == true)
+          bw.write("NO\n");
+        else
+          bw.write("YES\n"); 
+
+
 
     }
 
-    //bw.flush(); 
+    bw.flush(); 
   }
 
   public static class Node {
@@ -59,7 +76,7 @@ public class PhoneList {
     public int findCount(String s, int index){
       if(index == s.length()) return size;
 
-      Node child = getNode(s.charAt(index));
+      Node child = getNode(Integer.parseInt(s.substring(index,index+1)));
 
       if(child == null){
         return 0;
