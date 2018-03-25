@@ -1,3 +1,5 @@
+//MISTAKE IN QUESTION, n is <=200- NOT <=1000
+
 #include <bits/stdc++.h>
 using namespace std; 
 
