@@ -29,7 +29,6 @@ public class AWalkThroughTheForest {
 			int i = 0;
 			int arr[] = new int[n]; 
 
-			//System.out.println(graph.size());
 
 			for(Node node: graph){
 				arr[i] = node.dist; 
@@ -63,11 +62,7 @@ public class AWalkThroughTheForest {
 	}
 
 	public static void calculate(Node source){
-		// Algo:
-		// 1. Take the unvisited node with minimum weight.
-		// 2. Visit all its neighbours.
-		// 3. Update the distances for all the neighbours (In the Priority Queue).
-		// Repeat the process till all the connected nodes are visited.
+
 		
 		source.dist = 0;
 		PriorityQueue<Node> queue = new PriorityQueue<Node>(new Comparator<Node> (){
@@ -89,15 +84,10 @@ public class AWalkThroughTheForest {
 				int newDist = u.dist+neighbour.weight;
 				
 				if(neighbour.destination.dist>newDist){
-					// Remove the node from the queue to update the distance value.
 					queue.remove(neighbour.destination);
 					neighbour.destination.dist = newDist;
 					
-					// Take the path visited till now and add the new node.s
-					//neighbour.destination.path = new LinkedList<Vertex>(u.path);
-					//neighbour.target.path.add(u);
-					
-					//Reenter the node with new distance.
+
 					queue.add(neighbour.destination); 					
 				}
 			}
