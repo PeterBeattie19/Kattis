@@ -39,7 +39,7 @@ int mst(vector<vector<edge>> graph){
 	while(vis.size() < graph.size()){
 		edge e = pq.top(); 
 		pq.pop(); 
-		if(vis.count(e.d) > 0)
+		if(vis.count(e.define) > 0)
 			continue; 
 		result += e.w; 
 		vis.insert(e.d); 
