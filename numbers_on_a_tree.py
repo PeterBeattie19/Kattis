@@ -6,10 +6,6 @@ if len(line) == 1:
 	print(height)
 	exit()
 
-
-left = lambda i,arr: arr[(2*i)+ 1]
-right = lambda i,arr: arr[(2*i) + 2] 
-
 index = 0
 value = height
 for i in line[1]:
@@ -19,5 +15,4 @@ for i in line[1]:
 	else:
 		value = height - ((2*index) + 2)
 		index = ((2*index) + 2)
-
 print(value)
