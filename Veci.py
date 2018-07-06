@@ -15,9 +15,10 @@ def match(a, b):
 
 n = int(input())
 i = n+1
+sn = sorted(list(str(n)))
 
 while len(str(i)) <= len(str(n)):
-	if match(str(i), str(n)):
+	if sorted(list(str(i))) == sn:
 		print(i)
 		exit()
 	i += 1	
