@@ -1,6 +1,6 @@
 def f(x, memo):
     if memo[x] != 0: return memo[x] 
-
+        
     else:
         memo[x] = f(x-1, memo) + f(x-2, memo) 
         return memo[x] 
