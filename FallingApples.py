@@ -5,7 +5,7 @@ def solve(grid, r, c):
     elif grid[r+1][c] == '#':
         return solve(grid, r+2, c) 
 
-    elif grid[r][c] == '.':
+    elif grid[r][c] == '.' or grid[r][c] == '#':
         return solve(grid, r+1, c) 
 
     if grid[r+1][c] == 'a':
@@ -20,8 +20,9 @@ def solve(grid, r, c):
         return solve(grid, r+1, c) 
 
 r, c = map(int, input().split())
+grid = [['a']*10 for i in range(50000) ] 
 
-grid = []
+#grid = []
 
 for _ in range(r):
     grid.append(list(input())) 
