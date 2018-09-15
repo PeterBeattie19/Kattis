@@ -3,7 +3,7 @@ res = 100000000000000
 fa = -1
 fb = -1
 
-for a in range(s+1):
+for a in range(int(s/2)):
     b = int((s - v1*a)/v2)
     if (s - v1*a)%v2 == 0 and b >= 0:
         if a+b < res:
