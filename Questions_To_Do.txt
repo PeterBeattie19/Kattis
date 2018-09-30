@@ -15,3 +15,5 @@ Nizovi
 Restaurant Orders (DP)
 Swap to sort
 Nikola, Dijkstra 
+10 kinds of people
+Brexit
