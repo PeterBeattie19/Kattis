@@ -21,7 +21,7 @@ for line in sys.stdin:
 size = len(a)
 while len(a) != 0:
     i = heapq.heappop(a) 
-    sys.stdout.write(i +" "+ str(float((mp[i]/c)*100)))
+    sys.stdout.write(i +" "+ str(float((mp[i]/c)*100)) +"\n")
 sys.stdout.flush() 
 
     
