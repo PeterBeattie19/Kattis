@@ -17,7 +17,6 @@ def main():
             heapq.heappush(a, line) 
         c += 1
         
-        #if line == '0': break
 
     size = len(a)
     while len(a) != 0:
