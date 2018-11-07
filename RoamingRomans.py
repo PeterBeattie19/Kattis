@@ -1,0 +1,1 @@
+print(round(1000*float(input())*(5280/4854))) 
