@@ -16,7 +16,7 @@ inline void solve(vector<set<int>>& graph, int cur, set<int>& left, vector<int>&
             if(graph[i].size() <= original_sizes[i]/2 || graph[i].size() == 1)
                 solve(graph, i, left, original_sizes); 
         }
-    
+    }
 }
 
 
